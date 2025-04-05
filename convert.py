@@ -84,4 +84,7 @@ torch.onnx.export(
     opset_version=11
 )
 
+# Save column names that the scaler expects
+joblib.dump(scaler.feature_names_in_, "feature_names.pkl")
+
 print("✅ Successfully exported Hummingbird (PyTorch) model to ONNX!")
